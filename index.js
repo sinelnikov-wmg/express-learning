@@ -1,22 +1,18 @@
 const express = require('express');
+const fortunes = require('./lib/fortune');
 
 const app = express();
 app.use(express.static(`${__dirname}/public`));
 const handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
 
-const fortunes = [
-  'test',
-  'test1',
-  'test2',
-];
+
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.get('/', (req, res) => {
   res.render('home');
 });
 app.get('/about', (req, res) => {
-  const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-  res.render('about', { fortune: randomFortune });
+  res.render('about', { fortune: fortunes.getFortunes() });
 });
 app.set('port', process.env.PORT || 3000);
 app.use((req, res) => {
