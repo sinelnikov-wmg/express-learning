@@ -1,0 +1,13 @@
+<h1>Запрос цены для групп</h1>
+    <form>
+        <input type="hidden" name="referrer">
+        Название: <input type="text" id="fieldName" name="name"><br>
+        Размер группы: <input type="text" name="groupSize"><br>
+        Электроння почта: <input type="email" name="email"><br>
+    </form>
+
+        <script>
+            $(document).ready(()=> {
+                $('input[name="referrer"]').val(document.referrer);
+            });
+        </script>
