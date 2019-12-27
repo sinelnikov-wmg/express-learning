@@ -22,7 +22,7 @@
     "express-handlebars": "^3.0.0",
     "grunt": "^1.0.2",
     "grunt-cli": "^1.2.0",
-    "handlebars": "^4.0.11",
+    "handlebars": "^4.3.0",
     "linkchecker": "^1.1.0",
     "npm": "^6.0.0"
   },
